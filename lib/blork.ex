@@ -21,7 +21,33 @@ defmodule Blork do
     :private_hello
   end
 
+  @doc """
+  To test the hello world in elixir
+
+  ## Examples
+    iex>Blork.callPrivate
+    :private_hello
+  """
   def callPrivate do
     private_hello()
+  end
+
+  @doc """
+  To create a deck
+
+  ## Examples
+    iex>Blork.create_Deck
+    ["ACE", "TWO", "THREE"]
+  """
+  def create_Deck do
+    ["ACE", "TWO", "THREE"]
+  end
+
+  def shuffle(deck) do
+    Enum.shuffle(deck)
+  end
+
+  def contains?(deck, hand) do
+    Enum.member?(deck, hand)
   end
 end
