@@ -40,7 +40,26 @@ defmodule Blork do
     ["ACE", "TWO", "THREE"]
   """
   def create_Deck do
-    ["ACE", "TWO", "THREE"]
+    values = ["ACE", "TWO", "THREE", "FOUR", "FIVE"]
+    suites = ["SPADES", "CLUBS", "HEARTS", "DIAMONDS"]
+
+    cards =
+      for suite <- suites do
+        for value <- values do
+          "#{value} of #{suite}"
+        end
+      end
+
+    List.flatten(cards)
+  end
+
+  def create_Deck_new do
+    values = ["ACE", "TWO", "THREE", "FOUR", "FIVE"]
+    suites = ["SPADES", "CLUBS", "HEARTS", "DIAMONDS"]
+
+    for value <- values, suite <- suites do
+      "#{value} of #{suite}"
+    end
   end
 
   def shuffle(deck) do
